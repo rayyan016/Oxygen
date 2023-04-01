@@ -24,25 +24,29 @@ export default function NasaPhoto(){
     return(
         <>
             <NavBar/>
-            
-            {
-                photoData.media_type === "image" ? (
-                    <img src={photoData.url} alt={photoData.title} />
-                ) : (
-                    <iframe
-                        title="space-video"
-                        src={photoData.url}
-                        //frameBorder="0"
-                        //gesture="media"
-                        allow="encrypted-media"
-                        allowFullScreen
-                        className="photo" />
-                )
-            }
-            <div>
-                <h1 className="text-red-600">{photoData.title}</h1>
-                <p>{photoData.date}</p>
-                <p>{photoData.explanation}</p>
+            {/* //flex flex-row */}
+            <div className="grid md:grid-cols-2 gap-4 m-4">
+                {
+                    photoData.media_type === "image" ? (
+                        <img src={photoData.url} alt={photoData.title} className="rounded-xl" />
+                    ) : (
+                        <iframe
+                            title="space-video"
+                            src={photoData.url}
+                            //frameBorder="0"
+                            //gesture="media"
+                            allow="encrypted-media"
+                            allowFullScreen
+                            className="photo" />
+                    )
+                }
+                <div>
+                    <h1 className="text-3xl mb-3 text-heading font-semibold font-serif">Astronomy Picture of the Day</h1>
+                    <h1 className="text-2xl mb-3 text-heading font-serif">APOD Title: {photoData.title}</h1>
+                    <p className="mb-2 text-2xl text-heading font-serif">Date: {photoData.date}</p>
+                    <p className="text-xl font-mono leading-normal">{photoData.explanation}</p>
+                </div>
+
             </div>
         </>
     );
