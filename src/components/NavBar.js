@@ -8,7 +8,6 @@ export default function NavBar(){
                 <Link className="px-2 hover:opacity-60" to={"/"}>Home</Link>
                 <Link className="px-2 hover:opacity-60" to={"https://github.com/rayyan016"}>About</Link>
                 <Link className="px-2 hover:opacity-60" to={"https://www.linkedin.com/in/rayyan-aslam-686366235/"}>Contact</Link>
-
             </div>
         </>
     )

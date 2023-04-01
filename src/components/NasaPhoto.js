@@ -24,7 +24,6 @@ export default function NasaPhoto(){
     return(
         <>
             <NavBar/>
-            {/* //flex flex-row */}
             <div className="grid md:grid-cols-2 gap-4 m-4">
                 {
                     photoData.media_type === "image" ? (
