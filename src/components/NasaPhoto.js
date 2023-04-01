@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import NavBar from "./NavBar";
 
 const apiKey = process.env.REACT_APP_NASA_KEY;
 
@@ -14,11 +15,16 @@ export default function NasaPhoto(){
             setPhotoData(data);
         }
     }, []);
+    console.log(photoData);
 
-    if(!photoData) return("Not Found");
+    if(!photoData) 
+        return("Not Found");
+    
 
     return(
         <>
+            <NavBar/>
+            
             {
                 photoData.media_type === "image" ? (
                     <img src={photoData.url} alt={photoData.title} />
