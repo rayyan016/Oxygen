@@ -40,7 +40,7 @@ export default function NasaPhoto(){
                 )
             }
             <div>
-                <h1>{photoData.title}</h1>
+                <h1 className="text-red-600">{photoData.title}</h1>
                 <p>{photoData.date}</p>
                 <p>{photoData.explanation}</p>
             </div>
